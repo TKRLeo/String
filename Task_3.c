@@ -39,7 +39,11 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
     if (word->end == NULL)
         return 0;
     word->begin = findSpaceReverse(word->end,rend);
+
     word->begin++;
+    word->end++;
+
+    return 1;
 }
 
 void swap (char *a, char *b) {
