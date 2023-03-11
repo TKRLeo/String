@@ -34,6 +34,13 @@ int getWord(char *beginSearch, WordDescriptor *word) {
     return 1;
 }
 
+bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
+    word->end = findNonSpaceReverse(rbegin, rend);
+    if (word->end == NULL)
+        return 0;
+    word->begin = findSpaceReverse(word->end,rend);
+    word->begin++;
+}
 
 void swap (char *a, char *b) {
     int t = *a;
